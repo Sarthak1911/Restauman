@@ -1,0 +1,44 @@
+<template name="kitchenHome">
+	<div id="orders-waiter" class="tab-single col s12">
+		
+		<div class="container">
+			<div class="row">
+					{{#each getOrderItems}}
+					<div class="col s12">
+						<div class="card {{ getStatus }}" id="{{_id}}">
+
+							<div class="card-content">
+
+								<p>	Table: {{tableNo}}</p>
+								<!-- <p>{{orderId}}</p> -->
+								<br>
+								<p>Note: {{orderNote}}</p>
+								<ul class="">
+									{{#each orderItems }}
+									<li>{{ name }} x {{ quantity }}</li>
+
+									{{/each}}
+								</ul>
+								<p>
+
+									<!-- Dropdown Structure -->
+
+									<button class="btn waves-effect js-setdish-partialcomplete">Ping Waiter</button>
+									<button class="btn waves-effect js-setdish-completed">Completed</button>
+
+									<button class="btn waves-effect accept-order js-accept-order">Accept</button>
+
+
+								</p>
+								<small class="right">
+									{{ getRelativeCreatedTime }}
+								</small>
+							</div>
+						</div>
+					</div>
+					{{/each}}
+			</div>
+
+		</div>
+	</div>
+</template>

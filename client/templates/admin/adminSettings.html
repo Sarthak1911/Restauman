@@ -1,0 +1,142 @@
+<template name="adminSettings">
+	
+	{{> adminNav}}
+
+	<main class="main-container main-container-admin">
+		<div class="container">
+			{{> settingNav}}
+			<div id="emp" class="tab-single col s12">
+					<div class="row">
+						<!-- Reset Pass, Delete employee, view employee stats, check bills -->
+						<form class="col s12 add-employee">
+							<div class="input-field col s12">
+								<input id="email" type="email" name="email">
+								<label for="email">Email</label>
+							</div>
+
+							<div class="input-field col s12">
+								<input id="password" type="password" name="password">
+								<label for="password">Password</label>
+							</div>
+
+							<div class="col s12">
+								<p>Select employee type:</p>
+								<div>
+									<input class="with-gap" name="staffType" value="waiting" type="radio" id="waiting" />
+									<label for="waiting">Waiting</label>
+								</div>
+								<div>
+									<input class="with-gap" name="staffType" value="kitchen" type="radio" id="kitchen" />
+									<label for="kitchen">Kitchen</label>
+								</div>
+							</div>
+
+							<div class="col s12">
+
+								<p>
+									<button type="submit" class="waves-effect waves-light btn-large orange js-add-employee">Add user</button>
+								</p>
+							</div>
+
+						</form>
+					</div>
+			</div>
+
+			<div id="cat" class="col s12 tab-single">
+			
+					<div class="row">
+						<div class="row">
+							<div class="input-field col s12">
+								<form class="add-category">
+									<div>
+										<input id="category" type="text" name="dishCategory">
+										<label for="dish-category">Type in the categories</label>
+									</div>
+
+									<button type="submit" class="waves-effect waves-light btn-large orange js-add-category">Add</button>
+
+								</form>
+								<br>
+								<br>
+							</div>
+						</div>
+					</div>
+
+			</div>
+			<div id="dis" class="col s12 tab-single">
+					<div class="row">
+						<div class="col s12">
+							<form class="add-dish">
+								<div class="input-field">
+									<p>
+										<input id="dish-name" type="text" name="dishName">
+										<label for="name-of-dish">Dish Name</label>
+									</p>
+								</div>
+
+								<p>Select dish type:</p>
+								<p>
+									<input class="with-gap" name="dishType" value="veg" type="radio" id="veg" />
+									<label for="veg">Vegetarian</label>
+
+									<input class="with-gap" name="dishType" value="non-veg" type="radio" id="non-veg" />
+									<label for="non-veg">Non-Vegetarian</label>
+								</p>
+
+								<div class="input-field">
+									<p><select name="dishCategory" class="categories browser-default">
+										<option value="" disabled selected>Choose category</option>
+										{{#each getCategories }}
+										{{#each categories }}
+
+										<option value="{{ this }}">{{ this }}</option>
+
+										{{/each}}
+										{{/each}}
+									</select></p>
+								</div>
+
+								<div class="input-field">
+									<textarea id="textarea1" name="dishDescription" class="materialize-textarea" length="120"></textarea>
+									<label for="textarea1">Description</label>
+								</div>
+
+								<div class="input-field">
+									<input type="number" name="dishPrice">
+									<label for="textarea1">Price</label>
+								</div>
+
+								<div class="input-field">
+									<button type="submit" class="waves btn btn-large orange js-add-dish">Add dish</button>
+								</div>
+							</form>
+						</div>
+					</div>
+			</div>
+
+			<div id="table" class="col s12 tab-single">
+					<div class="row">
+						<form class="add-table">
+							<div class="input-field">
+								<input id="tableNo" type="number" name="tableNo" required>
+								<label for="tableNo">Do you have a number to identify this table?</label>
+
+							</div>
+
+							<div class="input-field">
+								<input id="seats" type="number" name="seats" required>
+								<label for="seats">How many people can sit on this table?</label>
+
+							</div>
+
+							<div class="input-field">
+								<button type="submit" class="btn waves btn-large orange js-add-table">Add a table</button>
+							</div>
+						</form>
+					</div>
+			</div>
+		
+		</div>
+	</main>
+
+</template>

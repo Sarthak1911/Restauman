@@ -1,0 +1,23 @@
+<template name="adminTable">
+	
+	{{> adminNav}}
+
+	<main class="main-container main-container-admin">
+		<div class="container">
+			<h3>Tables</h3>
+			<div class="row">
+				{{#each getTables}}
+				<div class="col s12 x12 m3">
+					<div class="card {{ status }}">
+						<div class="card-content">
+							<h3 class="center-align">{{ no }}</h3>
+							<p class="center-align">Capacity {{ capacity }}</p>
+						</div>
+					</div>
+				</div>
+				{{/each}}
+			</div>
+		</div>
+	</main>
+
+</template>

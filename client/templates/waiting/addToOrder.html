@@ -1,0 +1,20 @@
+<template name="addToOrder">
+    
+    <div class="container">
+
+        <div class="row">
+
+            <ul>
+                {{#each dishes}}
+                <li class="current__item " id="{{_id}}">
+                            {{ name }}
+                <span class="right">{{ price }}</span>
+                    
+                </li>
+                {{/each}}
+                <a style="bottom: 40px; right: 40px; position: fixed;" class="btn-floating btn-large waves-effect waves-light red  
+                {{ createOrderButton }}"><i class="material-icons">add</i></a>
+            </ul>
+        </div>
+    </div>
+</template>

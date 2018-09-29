@@ -1,0 +1,49 @@
+//Restaurant Collection
+{
+	"_id": "Object ID",
+	"name": "Restaurant Name",
+	"category":["drinks", "appetizers"]
+}
+
+//User collection
+{
+	"_id": "Object ID",
+	"restaurantID": "Object ID",
+	"roles": ["admin","waiter","kitchenStaff"]
+}
+
+//Tables
+{
+	"id": "Object ID",
+	"status": "Occupied|Vacant",
+	"capacity": "Number"
+}
+
+//Dishes 
+{
+	"_id": "Object ID",
+	"restaurantID": "Object ID",
+	"name": "Name",
+	"type": "",
+	// "subType": "",
+	"category":"",
+	"description": "Text",
+	"price" "Number",
+	"ingredients": [1,2] // list of ingredients
+}
+
+//Orders Collection
+
+{
+	"_id": "Object ID",
+	"restaurantID": "Object ID",  
+	"items": [ //mainDocket
+		[
+
+			{}, // Object of dishes -- name, type, category, 
+			{}, // Object of dishes
+			//see about timestamp
+			//status
+		]
+	]
+		}

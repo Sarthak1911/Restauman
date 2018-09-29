@@ -1,0 +1,34 @@
+<template name="adminOrder">
+	
+	{{> adminNav}}
+
+	<main class="main-container main-container-admin">
+		<div class="container">
+			<h3>Orders</h3>
+			<div class="row">
+				{{#each orders}}
+					<div class="col s12">
+						<a href="/home/adminOrder/{{_id}}" class="card {{ getStatus }}" id="{{_id}}">
+							
+							<div class="card-content">	
+							<p class="pull-right">
+									&#8377; {{ total }}
+							</p>
+								
+							<p>Table No. {{ getTableNo }}</p>
+								<!-- <p>{{ _id }}</p> -->
+								
+
+								<small class="right">
+									{{ getRelativeCreatedTime }}
+								</small>
+							</div>
+						</a>
+					</div>
+		
+				{{/each}}
+			</div>
+		</div>
+	</main>
+
+</template>

@@ -1,0 +1,82 @@
+<template name="home">
+
+
+	
+	{{#if isInRole 'admin' }}
+	<a href="#" data-activates="slide-out" class="red button-collapse"><i class="mdi-navigation-menu"></i></a>
+
+	{{> adminNav}}
+	<main class="main-container main-container-admin">
+		<div class="container">
+			<div class="row">
+				<div class="col s12">
+					<div class="card">
+						<div class="card-content">
+							<span class="card-title">Ongoing Orders for</span>
+								<ul>
+									{{#each getFirstOrders}}
+										<h3>
+											<li>
+												<h3>Table No {{tableNo}}</h3>
+											</li>
+										</h3>
+									{{/each}}
+								</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col s12">
+					<div class="card">
+						<div class="card-content">
+							<span class="card-title">Kitchen</span>
+							<h3 class="h3">
+								<ul>
+									{{#each getKitchenOrders}}
+										<h3>
+											<li>
+												<h3>Table No {{tableNo}}</h3>
+											</li>
+										</h3>
+									{{/each}}
+								</ul>
+							</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col s12">
+					<div class="card">
+						<div class="card-content">
+							<span class="card-title">Tables</span>
+							<h3 class="h3">{{getTotalOccupiedTables}}/{{getTotalTables}} occupied</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col s12">
+					<div class="card">
+						<div class="card-content">
+							<span class="card-title">Revenue generated</span>
+							
+							<h3 class="header">&#8377; {{getRevenueDaily}}</h3>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	{{/if }}
+
+	{{#if isInRole 'waiting' }}
+
+	{{> waitingNav}}
+	{{> waitingHome}}
+
+	{{/if}}
+
+	{{#if isInRole 'kitchen' }}
+	
+	{{> kitchenNav}}
+	{{> kitchenHome}}
+	
+	{{/if}}
+</template>

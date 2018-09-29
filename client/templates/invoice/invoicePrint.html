@@ -1,0 +1,17 @@
+<template name="invoicePrint">
+
+        <h4>Table No. {{getTableNumber}}</h4>
+        {{#each getOrderItems}}
+          {{#each orderItems}}
+          <p class="invoice__item">
+            {{ name }} - {{price}}x{{ quantity }} <span class="right">{{innerTotal}}</span>
+          </p>
+          {{/each}}
+
+        {{/each}}
+        
+        <p class="">
+         <span class="left">Total: </span> <span class="right">{{ getOrderTotal }}</span>
+       </p>
+
+</template>

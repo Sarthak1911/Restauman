@@ -1,0 +1,26 @@
+<template name="adminNav">
+
+	<nav class="side-nav fixed red lighten-1 left hide-on-med-and-down">
+		<a href="{{pathFor route='home'}}" class="waves-effect waves-light side-nav__item {{isActiveRoute 'home' class='side-nav__item-active'}}"><i class="material-icons">&#xE88A;</i> Home</a>
+		<a href=" {{pathFor route='adminOrder'}}  " class="waves-effect waves-light side-nav__item {{isActiveRoute 'adminOrder' class='side-nav__item-active'}}"><i class="material-icons">&#xEB49;</i> Orders</a>
+		<a href="{{pathFor route='adminTable'}}" class="waves-effect waves-light side-nav__item {{isActiveRoute 'adminTable' class='side-nav__item-active'}}"><i class="material-icons">&#xE903;</i> Tables</a>
+		<a href="{{pathFor route='menu'}}" class="waves-effect waves-light side-nav__item {{isActiveRoute 'menu' class='side-nav__item-active'}}"><i class="material-icons">&#xE871;</i> Menu</a>	
+		<!-- <a href="{{pathFor route='inventory'}}" class="waves-effect waves-light side-nav__item {{isActiveRoute 'inventory' class='side-nav__item-active'}}"><i class="material-icons">&#xE871;</i> Inventory</a>	 -->
+		<a href="{{pathFor route='adminSettings'}}" class="waves-effect waves-light side-nav__item {{isActiveRoute 'adminSettings' class='side-nav__item-active'}}"><i class="material-icons">&#xE8B8;</i> Settings</a>	
+		<a href="#" class="waves-effect waves-light side-nav__item js-logout"><i class="material-icons">&#xE8AC;</i> Log out</a>	
+	</nav>
+
+	
+	<nav class="hide-on-large-only">
+		<ul id="slide-out" class="side-nav">
+			<li><a href="{{pathFor route='home'}}" class="waves-effect waves-light side-nav__item {{isActiveRoute 'home' class='side-nav__item-active'}}"><i class="material-icons">&#xE88A;</i> Home</a></li>
+			<li><a href=" {{pathFor route='adminOrder'}}  " class="waves-effect waves-light side-nav__item {{isActiveRoute 'adminOrder' class='side-nav__item-active'}}"><i class="material-icons">&#xEB49;</i> Orders</a></li>
+			<li><a href="{{pathFor route='adminTable'}}" class="waves-effect waves-light side-nav__item {{isActiveRoute 'adminTable' class='side-nav__item-active'}}"><i class="material-icons">&#xE903;</i> Tables</a></li>
+			<li><a href="{{pathFor route='menu'}}" class="waves-effect waves-light side-nav__item {{isActiveRoute 'menu' class='side-nav__item-active'}}"><i class="material-icons">&#xE871;</i> Menu</a>	</li>
+			<!-- <li><a href="{{pathFor route='inventory'}}" class="waves-effect waves-light side-nav__item {{isActiveRoute 'inventory' class='side-nav__item-active'}}"><i class="material-icons">&#xE871;</i> Inventory</a></li> -->
+			<li><a href="{{pathFor route='adminSettings'}}" class="waves-effect waves-light side-nav__item {{isActiveRoute 'adminSettings' class='side-nav__item-active'}}"><i class="material-icons">&#xE8B8;</i> Settings</a>	</li>
+			<li><a href="#" class="waves-effect waves-light side-nav__item js-logout"><i class="material-icons">&#xE8AC;</i> Log out</a>	</li>
+		</ul>
+		<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+	</nav>
+</template>

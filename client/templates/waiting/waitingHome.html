@@ -1,0 +1,72 @@
+<template name="waitingHome">
+	<div id="tables" class="tab-single col s12">
+		
+		<div class="container">
+			<div class="row">
+				{{#each getTables}}
+				<div class="col s12 m12 l2 waves-effect waves-light">
+					<a href="#" class="grey-text text-darken-3 hit">
+						<div class="card {{ status }}">
+							<div class="card-content">
+								<h3 class="center-align">{{ no }}</h3>
+								<p class="center-align">Capacity: {{ capacity }}</p>
+							</div>
+						</div>
+					</a>
+				</div>
+				{{/each}}
+			</div>
+	
+		</div>
+	</div>
+	<div id="c-orders" class="tab-single col s12">
+		<div class="container">
+			<div class="row">
+			
+				{{#each getOrders }}
+					<div class="col s12">
+						<a href="/order/{{ _id }}" class="card {{ getStatus }}" id="{{_id}}">
+							
+							<div class="card-content">
+							<p class="pull-right">
+									&#8377; {{ total }}
+								</p>
+			
+								<p>Table No. {{ getTableNo }}</p>
+								<!-- <p>{{ _id }}</p> -->
+								
+
+							
+								<small class="right">
+									{{ getRelativeCreatedTime }}
+								</small>
+							</div>
+						</a>
+					</div>
+				{{/each}}
+		
+			</div>
+		</div>
+		
+	</div>
+	<div id="n-orders" class="tab-single col s12">
+		<div class="container">
+
+			<div class="row">
+
+				<ul>
+					{{#each dishes}}
+					<li class="current__item " id="{{_id}}">
+								{{ name }}
+					<span class="right">{{ price }}</span>
+						
+					</li>
+					{{/each}}
+					<a style="bottom: 40px; right: 40px; position: fixed;" class="btn-floating btn-large waves-effect waves-light red  
+					{{ createOrderButton }}"><i class="material-icons">add</i></a>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</template>

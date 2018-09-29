@@ -1,0 +1,39 @@
+<template name="newOrder">
+{{#contentFor "headerTitle"}}
+  <h1 class="title">Notifications</h1>
+{{/contentFor}}
+
+
+{{#ionView}}
+	{{#ionContent}}
+		<div id="n-orders" class="tab-single col s12">
+		<div class="container">
+
+			<div class="row">
+
+				<ul>
+					{{#each dishes}}
+						<li class="current__item " id="{{_id}}">
+									{{ name }}
+						<span class="right">{{ price }}</span>
+							
+						</li>
+					{{/each}}
+					<a style="bottom: 40px; right: 40px; position: fixed;" class="btn-floating btn-large waves-effect waves-light red  
+					{{ createOrderButton }}"><i class="material-icons">add</i></a>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+  {{/ionContent}}
+{{/ionView}}
+
+{{#ionTabs class="tabs-positive tabs-icon-top"}}
+  {{> ionTab title="News" path="news" iconOff="ios-paper" iconOn="ios-paper"}}
+  {{> ionTab title="Todos" path="todos" iconOff="checkmark-circled" iconOn="checkmark-circled"}}
+  {{> ionTab title="New Order" path="profile" iconOff="person" iconOn="person"}}
+{{/ionTabs}}
+
+</template>

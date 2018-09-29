@@ -1,0 +1,41 @@
+<template name="adminOrderSingle">
+
+{{> adminNav}}
+
+    <main class="main-container main-container-admin">
+        <div class="container">
+            <h3>Order</h3>
+            <div class="row">
+    <div class="col s12">
+        <h5>
+            <span class="pull-left">Table {{getTableNo}} - &#8377;{{ getTotal }}</span>
+            <span class="pull-right">{{getRelativeCreatedTime}}</span>
+        </h5>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col s12">   
+            {{#each singleDocketItems }}
+                    <div class="col s12">
+                        <div class="card {{ getStatus }}" id="{{_id}}">
+                            <div class="card-content">
+                            {{ _id }}
+                            <p class="right">&#8377;{{ price }}</p>
+                                <ul class="">
+                                    {{#each orderItems }}
+                                        <li>{{ name }} x {{ quantity }}</li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+            {{/each}}
+
+            <hr>
+            <div class="js-print-invoice btn waves">Print Invoice</div>
+        </div>
+    </div>
+        </div>
+    </main>
+</template>

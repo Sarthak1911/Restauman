@@ -1,0 +1,57 @@
+<template name="menuEdit">
+	{{> adminNav}}
+
+	<div class="main-container main-container--admin">
+		<div class="container">
+			{{#let dish=getDish}}
+			<h2>Edit {{dish.name}}</h2>
+			<div class="divider"></div>
+			<br>
+			<form class="edit-dish row">
+				<div class="col s12">
+					<div class="input-field">
+						<p>
+							<input id="dish-name" type="text" name="dishName" value={{dish.name}} class="validate active">
+							<label for="name-of-dish" value>Dish Name</label>
+						</p>
+					</div>
+
+					<p>Select dish type:</p>
+					<p>
+						<input class="with-gap" name="dishType" value="veg" selected="{{ checkType 'veg' dish}}" type="radio" id="veg" />
+						<label for="veg">Vegetarian</label>
+
+						<input class="with-gap" name="dishType" value="non-veg" selected="{{ checkType 'non-veg' dish }}" type="radio" id="non-veg" />
+						<label for="non-veg">Non-Vegetarian</label>
+					</p>
+
+					<div class="input-field">
+						<p><select name="dishCategory" class="categories browser-default">
+							<option value="" disabled>Choose category</option>
+							{{#each getCategories }}
+								{{#each categories }}
+									<option value="{{ this }}" selected="{{checkCategory this}}">{{ this }}</option>
+								{{/each}}
+							{{/each}}
+						</select></p>
+					</div>
+
+					<div class="input-field">
+						<textarea id="textarea1" name="dishDescription" class="materialize-textarea active" length="120">{{ dish.description }}</textarea>
+						<label for="textarea1">Description</label>
+					</div>
+
+					<div class="input-field">
+						<input type="number" name="dishPrice" value={{dish.price}} class="active">
+						<label for="textarea1">Price</label>
+					</div>
+
+					<div class="input-field">
+						<button type="submit" class="waves btn orange js-edit-dish">Edit dish</button>
+					</div>
+				</div>
+			</form>
+			{{/let}}
+		</div>
+	</div>
+</template>

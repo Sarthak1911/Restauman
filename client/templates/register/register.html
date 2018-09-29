@@ -1,0 +1,55 @@
+<template name="register">
+		<h2 class="header center orange-text">Register here</h2>
+		<div class="divider"></div>
+		<div class="section">
+			<div class="row">
+				<form class="col s6 offset-s3">
+					<div class="row">
+						<div class="left-align">
+							<h4 class="header grey-text text-darken-3">Personal Info.</h4>
+						</div>
+
+					</div>
+					<div class="row">
+							{{ errorRegister }}
+						<div class="input-field col s12">
+			          		<input id="username" type="text" class="validate">
+			          		<label for="username">Username</label>
+				        </div>
+				  
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="email" type="email" class="validate">
+							<label for="email">Email</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="password" type="password" class="validate">
+							<label for="password">Password</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="re_password" type="password" class="validate">
+							<label for="re_password">Re-enter password</label>
+						</div>
+					</div>
+					<div class="left-align">
+						<h4 class="header grey-text text-darken-3">Restaurant Info.</h4>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="resto_name" type="text" class="validate">
+							<label for="resto_name">Name</label>
+						</div>
+					</div>
+					<div class="row center">
+						<a class="waves-effect waves-light btn-large orange js-register-submit" type="submit" href="#">Submit</a>
+					</div>
+				</form>
+				
+			</div>
+		</div>
+</template>

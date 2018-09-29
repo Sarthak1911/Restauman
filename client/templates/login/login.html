@@ -1,0 +1,35 @@
+<template name="login">
+	<form class="section no-pad-bot login" id="index-banner">
+		<div class="container">
+			<h2 class="header center orange-text">Restauman</h2>
+			<div class="row center">
+				<h5 class="header col s12 light">Sit back and rest, we'll automate everything.</h5>
+			</div>
+			<br>
+			<div class="row">
+				<div class="input-field col s6 offset-s3">
+					<input id="email" type="email" name="email">
+					<label for="email">Email</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6 offset-s3">
+					<input id="password" type="password" name="password">
+					<label for="password">Password</label>
+				</div>
+			</div>
+
+			<div class="row center">
+				<button type="submit" class="waves-effect waves-light btn-large orange">Login</button>
+			</div>
+		</div>
+	</form>
+
+	<div class="container">
+	
+		<div class="row center">
+			<a href="{{pathFor route='register'}}">Get your restaurant on board, sign up!</a>
+		</div>
+	</div>
+	
+</template>

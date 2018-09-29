@@ -1,0 +1,31 @@
+<template name="menu">
+	{{> adminNav}}
+
+	<main class="main-container main-container-admin">
+		<div class="container">
+			<div class="row col s12">
+				<h3 class="header">Menu</h3>
+				<br>
+				{{#each getDishes}}
+				<ul class="menu">
+					<li class="menu__item">
+						<div class="menu-item__description left">
+							<p class="menu-item__title">
+								{{name}}	
+							</p>
+						</div>
+						<div class="menu-item__meta right">
+							<div class="menu-item__price">&#8377; {{price}} 
+								<a class="js-edit-dish-menu">Edit</a>
+								<a class="js-delete-dish">Delete</a>
+							</div>
+
+						</div>
+					</li>
+				</ul>
+				{{/each}}
+			</div>
+		</div>
+	</main>
+
+</template>
